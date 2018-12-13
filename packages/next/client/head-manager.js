@@ -46,7 +46,9 @@ export default class HeadManager {
     } else {
       title = DEFAULT_TITLE
     }
-    if (title !== document.title) document.title = title
+
+    const htmlTitle = document.querySelector('title')
+    if (title !== htmlTitle.innerHTML) htmlTitle.innerHTML = title
   }
 
   updateElements (type, components) {
