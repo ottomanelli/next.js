@@ -41,7 +41,9 @@ export default class HeadManager {
       const { children } = component.props
       title = typeof children === 'string' ? children : children.join('')
     }
-    if (title !== document.title) document.title = title
+
+    const htmlTitle = document.querySelector('title')
+    if (title !== htmlTitle.innerHTML) htmlTitle.innerHTML = title
   }
 
   updateElements (type, components) {
